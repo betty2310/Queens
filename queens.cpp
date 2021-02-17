@@ -49,7 +49,7 @@ int main() {
     for (int i = (1 - n); i <= (n - 1);++i) {
         c[i] = true;
     }
-    cout<<"Cac cach xep"<<n<<" quan Hau la:\n";
+    cout<<"Cac cach xep "<<n<<" quan Hau la:\n";
     trySolve(1);
 
     return 0;
