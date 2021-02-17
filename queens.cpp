@@ -16,6 +16,18 @@ void printResult() { //in ket qua
     return;
 }
 
+void isAllTrue(int i, int j) {
+    a[j] = true;
+    b[i + j] = true;
+    c[i - j] = true;
+}
+
+void isAllFalse(int i, int j) {
+    a[j] = false;
+    b[i + j] = false;
+    c[i - j] = false;
+}
+
 void trySolve(int i) {
     for (int j = 1; j <= n;++j) {
         if((a[j] == true) && (b[i+j] == true) && (c[i-j] == true)) {//kiem tra vi tri 
@@ -24,13 +36,9 @@ void trySolve(int i) {
                     printResult();
                 }
                 else {
-                    a[j] = false;
-                    b[i + j] = false;
-                    c[i - j] = false;
+                    isAllFalse(i, j);
                     trySolve(i + 1);
-                    a[j] = true;
-                    b[i + j] = true;
-                    c[i - j] = true;
+                    isAllTrue(i, j);
                 }
         } 
         
